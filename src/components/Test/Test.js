@@ -27,7 +27,7 @@ class Test extends React.Component {
   render() {
     return (
       <div>
-        Test
+        Testing
       </div>
     );
   };
