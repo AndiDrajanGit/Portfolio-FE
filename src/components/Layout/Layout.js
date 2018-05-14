@@ -3,6 +3,8 @@ import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import s from './layout.scss';
+
 import * as testActions from '../../actions/test';
 
 const mapStateToProps = state => ({
@@ -13,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
   testActions: bindActionCreators(testActions, dispatch)
 });
 
-class Test extends React.Component {
+class Layout extends React.Component {
   static propTypes = {
     testActions: PropTypes.object,
     test: PropTypes.array
@@ -26,12 +28,12 @@ class Test extends React.Component {
 
   render() {
     return (
-      <div>
-        Testing
+      <div className={s.container}>
+        Layout test
       </div>
     );
   };
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Test);
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);
