@@ -1,0 +1,18 @@
+@import '../../constants/resources';
+
+.header {
+  background-color: $colorGrey;
+  color: $colorWhite;
+  opacity: 0;
+  width: 100%;
+  height: $heightHeader;
+  position: fixed;
+  top: -#{$heightHeader};
+  left: 0;
+  transition: all .5s;
+  &_visible {
+    opacity: 1;
+    top: 0;
+    transition: all .5s;
+  }
+}

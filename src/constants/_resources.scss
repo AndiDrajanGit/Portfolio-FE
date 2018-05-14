@@ -1,0 +1,26 @@
+@import '../../constants/fonts';
+
+// COLORS
+$colorWhite: #f5f5f5;
+$colorBlack: #000;
+$colorGreenLight: #0eb679;
+$colorGreenDark: #06734b;
+$colorGrey: #1b242f;
+
+// SIZES
+$widthMobile: 600px;
+$widthTablet: 800px;
+$heightHeader: 60px;
+
+// MEDIA
+$mediaHover: "not all and (hover: none)";
+$mediaMobile: "screen and (max-width: #{$widthMobile})";
+$mediaTablet: "screen and (max-width: #{$widthTablet})";
+
+// CLASSES
+.page {
+  float: left;
+  padding-top: $heightHeader;
+  width: 100%;
+  min-height: 100vh;
+}

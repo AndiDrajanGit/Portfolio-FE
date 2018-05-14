@@ -5,6 +5,13 @@ import React from 'react';
 
 import s from './layout.scss';
 
+import Header from '../Header';
+import Footer from '../Footer';
+import Home from '../Home';
+import About from '../About';
+import Portfolio from '../Portfolio';
+import Contact from '../Contact';
+
 import * as testActions from '../../actions/test';
 
 const mapStateToProps = state => ({
@@ -21,15 +28,19 @@ class Layout extends React.Component {
     test: PropTypes.array
   }
 
-
   componentWillMount = () => {
     this.props.testActions.getTest();
   };
 
   render() {
     return (
-      <div className={s.container}>
-        Layout test
+      <div id="layout" className={s.layout}>
+        <Header />
+        <Home />
+        <About />
+        <Portfolio />
+        <Contact />
+        <Footer />
       </div>
     );
   };
