@@ -4,8 +4,8 @@ import cx from 'classnames';
 
 import s from './home.scss';
 
-import logo from './logo.png';
-import test from './test.svg';
+import logo from '../../images/logo.png';
+import test from '../../images/test.svg';
 
 class Home extends React.Component {
   static propTypes = {

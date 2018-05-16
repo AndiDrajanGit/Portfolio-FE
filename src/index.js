@@ -4,7 +4,7 @@ import {render} from 'react-dom';
 import configureStore from './store';
 import registerServiceWorker from './registerServiceWorker';
 
-import App from './components/App';
+import App from './App';
 
 const store = configureStore();
 

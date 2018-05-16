@@ -10,6 +10,10 @@ body {
 .layout {
   float: left;
   width: 100%;
+  &__containers {
+    float: left;
+    width: 100%;
+  }
 }
 
 * {

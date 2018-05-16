@@ -5,8 +5,8 @@ import React from 'react';
 
 import s from './layout.scss';
 
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Home from '../Home';
 import About from '../About';
 import Portfolio from '../Portfolio';
@@ -36,10 +36,12 @@ class Layout extends React.Component {
     return (
       <div id="layout" className={s.layout}>
         <Header />
-        <Home />
-        <About />
-        <Portfolio />
-        <Contact />
+        <div className={s.layout__containers}>
+          <Home />
+          <About />
+          <Portfolio />
+          <Contact />
+        </div>
         <Footer />
       </div>
     );

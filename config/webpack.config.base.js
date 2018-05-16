@@ -3,6 +3,9 @@ const paths = require('./paths');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+const getClientEnvironment = require('./env');
+
+const envNode = getClientEnvironment().stringified['process.env'].NODE_ENV;
 
 module.exports = {
   resolve: {
@@ -53,7 +56,7 @@ module.exports = {
                   loader: 'css-loader',
                   options: {
                     modules: true,
-                    localIdentName: '[local]__[hash:base64:5]'
+                    localIdentName: envNode === '"development"' ? '[local]' : '[name]__[local]__[hash:base64:5]'
                   }
                 },
                 'postcss-loader'
@@ -71,7 +74,7 @@ module.exports = {
                     modules: true,
                     sourceMap: true,
                     importLoaders: 2,
-                    localIdentName: '[local]__[hash:base64:5]'
+                    localIdentName: envNode === '"development"' ? '[local]' : '[name]__[local]__[hash:base64:5]'
                   }
                 },
                 'sass-loader'

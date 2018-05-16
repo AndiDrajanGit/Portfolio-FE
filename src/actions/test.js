@@ -6,7 +6,7 @@ export function setTest(data) {
 
 export function getTest() {
   return dispatch => {
-    return fetch('https://bws.rocks/wp-json/wp/v2/team', {
+    return fetch('http://localhost/portfolio_admin/wp-json/wp/v2/posts', {
       method: 'GET'
     })
     .then(response => response.json())
