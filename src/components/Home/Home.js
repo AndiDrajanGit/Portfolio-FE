@@ -4,6 +4,9 @@ import cx from 'classnames';
 
 import s from './home.scss';
 
+import logo from './logo.png';
+import test from './test.svg';
+
 class Home extends React.Component {
   static propTypes = {
   }
@@ -11,7 +14,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className={cx(s.page, s.home)}>
-        home
+        <img src={logo} />
       </div>
     );
   };

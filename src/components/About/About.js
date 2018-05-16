@@ -11,7 +11,7 @@ class About extends React.Component {
   render() {
     return (
       <div className={cx(s.page, s.about)}>
-        about
+        ABOUT
       </div>
     );
   };
