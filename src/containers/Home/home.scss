@@ -1,7 +1,59 @@
 @import '../../constants/resources';
 
 .home {
-  background-color: $colorGreenLight;
-  padding-top: 0;
+  text-align: center;
+  padding-top: 0 !important;
   height: 100vh;
+  position: relative;
+  &__logo {
+    position: absolute;
+    left: 50%;
+    top: -130px;
+    @include transform(translateX(-50%));
+    img {
+      margin-top: 145px;
+      width: 100px;
+    }
+  }
+  &__title {
+    float: left;
+    text-align: center;
+    margin-top: calc(150px + 8vh);
+    width: 100%;
+    h1 {
+      color: $colorGreenLight;
+      font-size: 85px;
+      margin-bottom: 5vh;
+    }
+    h2 {
+      color: $colorWhite;
+      font-size: 40px;
+    }
+  }
+  &__nav {
+    float: left;
+    text-align: center;
+    margin-top: 18vh;
+    width: 100%;
+  }
+
+  @media #{$mediaMobile} {
+    &__logo {
+      width: 230px !important;
+      height: 230px !important;
+      top: -115px;
+      img {
+        margin-top: 125px;
+        width: 90px;
+      }
+    }
+    &__title {
+      h1 {
+        font-size: 55px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
 }
