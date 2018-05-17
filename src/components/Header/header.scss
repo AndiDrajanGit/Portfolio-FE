@@ -9,6 +9,7 @@
   position: fixed;
   top: -#{$heightHeader};
   left: 0;
+  z-index: 200;
   transition: all .5s;
   &_visible {
     opacity: 1;

@@ -35,14 +35,6 @@
   font-style: normal;
 }
 
-.font_medium {
-  font-weight: 500;
-}
-
-.font_bold {
-  font-weight: bold;
-}
-
 // Fontello (Font Awesome)
 @font-face {
   font-family: 'Fontello';
@@ -66,7 +58,7 @@
 }
 */
 
- [class^="icon_"]:before, [class*=" icon_"]:before {
+ [class^="icon_"]:before, [class*=" icon_"]:before, [class*="_icon_"]:before {
   font-family: "Fontello";
   font-style: normal;
   font-weight: normal;
