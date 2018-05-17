@@ -1,4 +1,5 @@
 import * as types from './actionTypes';
+import {API_URL} from '../constants/AppConsts';
 
 export function setTest(data) {
   return {type: types.SET, data: data};
@@ -6,7 +7,7 @@ export function setTest(data) {
 
 export function getTest() {
   return dispatch => {
-    return fetch('http://localhost/portfolio_admin/wp-json/wp/v2/posts', {
+    return fetch(`${API_URL}/posts`, {
       method: 'GET'
     })
     .then(response => response.json())

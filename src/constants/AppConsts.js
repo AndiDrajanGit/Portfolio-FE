@@ -1,0 +1,1 @@
+export const API_URL = 'http://localhost/portfolio_admin/wp-json/wp/v2';
