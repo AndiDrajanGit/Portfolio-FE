@@ -10,6 +10,7 @@ import HomeNavItem from '../../components/HomeNavItem';
 import bg from '../../images/bg_01.jpg';
 import logo from '../../images/logo.png';
 
+import {NAV} from '../../constants/AppConsts';
 
 class Home extends React.Component {
   static propTypes = {
@@ -36,9 +37,10 @@ class Home extends React.Component {
             </tr>
             <tr>
               <td className={s.home__nav}>
-                <HomeNavItem link="#about" icon="info" text="About" />
-                <HomeNavItem link="#portfolio" icon="tiles" text="Portfolio" />
-                <HomeNavItem link="#contact" icon="envelope" text="Contact" />
+                {NAV.map((item, key) => (
+                  item.showOnHome &&
+                    <HomeNavItem key={key} link={`#${item.title}`} icon={item.icon} text={item.title} />
+                ))}
               </td>
             </tr>
           </tbody>

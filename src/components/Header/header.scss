@@ -16,4 +16,40 @@
     top: 0;
     transition: all .5s;
   }
+  &__content {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+  }
+  &__logo {
+    float: left;
+    display: block;
+    padding: 10px 0;
+    height: 100%;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__nav {
+    float: right;
+    line-height: $heightHeader;
+    height: 100%;
+    transition: all .2s;
+    &__item {
+      float: left;
+      color: $colorWhite;
+      font-size: 18px;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:not(:first-child) {
+        margin-left: 50px;
+      }
+      &_active, &:hover {
+        color: $colorGreenLight;
+        transition: all .2s;
+      }
+    }
+  }
 }
