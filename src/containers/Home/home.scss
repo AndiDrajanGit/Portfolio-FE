@@ -6,24 +6,28 @@
   height: 100vh;
   position: relative;
   &__logo {
-    position: absolute;
-    left: 50%;
-    top: -130px;
-    @include transform(translateX(-50%));
+    @include hexagon(300px, 250px);
+    margin: 0 auto;
+    margin-top: -130px;
     img {
       margin-top: 145px;
       width: 100px;
     }
   }
-  &__title {
+  &__content {
     float: left;
-    text-align: center;
-    margin-top: calc(150px + 8vh);
+    color: $colorWhite;
     width: 100%;
+    height: calc(100vh - 130px);
+  }
+  &__title {
+    height: 40%;
+    text-align: center;
+    vertical-align: middle;
     h1 {
       color: $colorGreenLight;
       font-size: 85px;
-      margin-bottom: 5vh;
+      margin-bottom: 20px;
     }
     h2 {
       color: $colorWhite;
@@ -31,28 +35,25 @@
     }
   }
   &__nav {
-    float: left;
     text-align: center;
-    margin-top: 18vh;
+    vertical-align: middle;
     width: 100%;
   }
 
   @media #{$mediaMobile} {
-    &__logo {
-      width: 230px !important;
-      height: 230px !important;
-      top: -115px;
-      img {
-        margin-top: 125px;
-        width: 90px;
-      }
-    }
     &__title {
+      vertical-align: bottom;
+      height: 40%;
       h1 {
         font-size: 55px;
       }
       h2 {
-        font-size: 20px;
+        font-size: 25px;
+        span {
+          float: left;
+          margin: 5px 0;
+          width: 100%;
+        }
       }
     }
   }

@@ -44,6 +44,10 @@ h1, h2, p {
   margin: 0;
 }
 
+.desktop-hide {
+  display: none;
+}
+
 // MIXINS
 @mixin transform($value) {
   transform: $value;
@@ -51,3 +55,19 @@ h1, h2, p {
   -ms-transform: $value;
 }
 
+@mixin hexagon($width, $height) {
+  background-image: url('../../images/hexagon.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  width: $width;
+  height: $height;
+}
+
+
+@media #{$mediaMobile} {
+  .mobile-hide {
+    display: none;
+  }
+}

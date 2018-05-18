@@ -34,7 +34,7 @@ class Layout extends React.Component {
   };
 
   componentDidMount = () => {
-    configureAnchors({scrollDuration: 500});
+    configureAnchors({scrollDuration: 750});
   };
 
   render() {
