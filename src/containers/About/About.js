@@ -18,8 +18,6 @@ class About extends React.Component {
     const {description} = this.props;
     const isDescriptionLoaded = !description.isPending && description.isLoaded;
 
-    console.log('LLLLLLL', isDescriptionLoaded);
-
     return (
       <div className={cx(s.page, s.about)}>
         <Background image={bg} overlayOpacity={0.7} />
