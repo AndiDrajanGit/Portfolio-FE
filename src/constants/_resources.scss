@@ -52,19 +52,10 @@ h1, h2, p {
 @mixin transform($value) {
   transform: $value;
   -webkit-transform: $value;
+  -moz-transform: $value;
   -ms-transform: $value;
+  -o-transform: $value;
 }
-
-@mixin hexagon($width, $height) {
-  background-image: url('../../images/hexagon.svg');
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-align: center;
-  width: $width;
-  height: $height;
-}
-
 
 @media #{$mediaMobile} {
   .mobile-hide {

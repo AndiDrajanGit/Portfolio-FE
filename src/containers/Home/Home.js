@@ -5,6 +5,7 @@ import cx from 'classnames';
 import s from './home.scss';
 
 import Background from '../../components/Background';
+import Hexagon from '../../components/Hexagon';
 import HomeNavItem from '../../components/HomeNavItem';
 
 import bg from '../../images/bg_01.jpg';
@@ -20,9 +21,9 @@ class Home extends React.Component {
     return (
       <div className={cx(s.page, s.home)}>
         <Background image={bg} overlayOpacity={0.75} />
-        <div className={s.home__logo}>
+        <Hexagon className={s.home__logo} width="300px" height="250px">
           <img src={logo} alt="logo" />
-        </div>
+        </Hexagon>
         <table className={s.home__content}>
           <tbody>
             <tr>
