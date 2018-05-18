@@ -13,24 +13,24 @@ import About from '../About';
 import Portfolio from '../Portfolio';
 import Contact from '../Contact';
 
-import * as testActions from '../../actions/test';
+import * as descriptionActions from '../../actions/description';
 
 const mapStateToProps = state => ({
-  test: state.test.data
+  description: state.description
 });
 
 const mapDispatchToProps = dispatch => ({
-  testActions: bindActionCreators(testActions, dispatch)
+  descriptionActions: bindActionCreators(descriptionActions, dispatch)
 });
 
 class Layout extends React.Component {
   static propTypes = {
-    testActions: PropTypes.object,
-    test: PropTypes.array
+    descriptionActions: PropTypes.object,
+    description: PropTypes.object
   }
 
   componentWillMount = () => {
-    this.props.testActions.getTest();
+    this.props.descriptionActions.getDescription();
   };
 
   componentDidMount = () => {
@@ -38,6 +38,8 @@ class Layout extends React.Component {
   };
 
   render() {
+    const {description} = this.props;
+
     return (
       <div id="layout" className={s.layout}>
         <Header />
@@ -46,7 +48,9 @@ class Layout extends React.Component {
             <Home />
           </ScrollableAnchor>
           <ScrollableAnchor id="about">
-            <About />
+            <About
+              description={description}
+            />
           </ScrollableAnchor>
           <ScrollableAnchor id="portfolio">
             <Portfolio />

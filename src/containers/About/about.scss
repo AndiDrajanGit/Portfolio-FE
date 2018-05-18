@@ -1,5 +1,17 @@
 @import '../../constants/resources';
 
 .about {
-  background-color: $colorWhite;
+  color: $colorWhite;
+  &__description {
+    float: left;
+    width: 50%;
+    min-height: calc(100vh - #{$heightHeader});
+    position: relative;
+  }
+  &__content {
+    background-color: $colorGreenDark;
+    width: 100%;
+    height: 100vh;
+    @include animation(fadein 2s);
+  }
 }

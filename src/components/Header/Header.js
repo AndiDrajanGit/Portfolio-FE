@@ -43,7 +43,6 @@ class Header extends React.Component {
 
   render() {
     const hash = window.location.hash;
-    console.log(hash);
 
     return (
       <div className={cx(s.header, this.state.visible ? s['header_visible'] : '')}>
