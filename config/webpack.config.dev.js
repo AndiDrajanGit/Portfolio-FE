@@ -34,38 +34,6 @@ module.exports = merge(baseConfig, {
     devtoolModuleFilenameTemplate: info =>
       path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
   },
-  // module: {
-  //   rules: [
-  //     {
-  //       oneOf: [
-  //         {
-  //           test: /\.css$/,
-  //           use: ExtractTextPlugin.extract({
-  //             use: [
-  //               {
-  //                 options: {
-  //                   localIdentName: '[local]'
-  //                 }
-  //               },
-  //             ]
-  //           })
-  //         },
-  //         {
-  //           test: /\.scss$/,
-  //           use: ExtractTextPlugin.extract({
-  //             use: [
-  //               {
-  //                 options: {
-  //                   localIdentName: '[local]'
-  //                 }
-  //               },
-  //             ]
-  //           })
-  //         },
-  //       ]
-  //     }
-  //   ]
-  // },
   plugins: [
     new InterpolateHtmlPlugin(env.raw),
     new HtmlWebpackPlugin({
