@@ -11,13 +11,13 @@
   left: 0;
   &_theme {
     &_green {
-      background-image: url('../../images/loader_green.svg');
+      background-image: url('images/loader_green.svg');
     }
     &_white {
-      background-image: url('../../images/loader_white.svg');
+      background-image: url('images/loader_white.svg');
     }
   }
-  &_fadeout {
+  &--fadeout {
     @include animation(fadeout 2s);
   }
 }

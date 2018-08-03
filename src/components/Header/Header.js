@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 
-import s from './header.scss';
+import './Header.scss';
 
-import logo from '../../images/logo.png';
+import logo from 'images/logo.png';
 
-import {NAV} from '../../constants/AppConsts';
+import {NAV} from 'constants/AppConsts';
 
 let winHeight = window.innerHeight;
 
@@ -45,19 +45,19 @@ class Header extends React.Component {
     const hash = window.location.hash;
 
     return (
-      <div className={cx(s.header, this.state.visible ? s['header_visible'] : '')}>
-        <div className={s.header__content}>
-          <a href="#home" className={s.header__logo}>
+      <div className={cx("header", this.state.visible ? "header--visible" : '')}>
+        <div className="header__content">
+          <a href="#home" className="header__logo">
             <img src={logo} alt="logo" />
           </a>
-          <div className={s.header__nav}>
+          <div className="header__nav">
             {NAV.map((item, key) => (
               <a
                 key={key}
                 href={`#${item.title}`}
                 className={cx(
-                  s.header__nav__item,
-                  this.state.activeNavItem === item.title ? s.header__nav__item_active : ''
+                  "header__nav__item",
+                  this.state.activeNavItem === item.title ? "header__nav__item--active" : ''
                 )}
               >
                 {item.title}

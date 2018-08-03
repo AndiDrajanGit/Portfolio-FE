@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 
-import s from './portfolio.scss';
+import './Portfolio.scss';
 
 class Portfolio extends React.Component {
   static propTypes = {
@@ -10,7 +10,7 @@ class Portfolio extends React.Component {
 
   render() {
     return (
-      <div className={cx(s.page, s.portfolio)}>
+      <div className="page page-portfolio">
         portfolio
       </div>
     );

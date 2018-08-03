@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor'
 
-import s from './layout.scss';
+import './Layout.scss';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import Home from '../Home';
-import About from '../About';
-import Portfolio from '../Portfolio';
-import Contact from '../Contact';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import Home from 'containers/Home';
+import About from 'containers/About';
+import Portfolio from 'containers/Portfolio';
+import Contact from 'containers/Contact';
 
-import * as descriptionActions from '../../actions/description';
+import * as descriptionActions from 'actions/description';
 
 const mapStateToProps = state => ({
   description: state.description
@@ -41,9 +41,9 @@ class Layout extends React.Component {
     const {description} = this.props;
 
     return (
-      <div id="layout" className={s.layout}>
+      <div id="layout" className="layout">
         <Header />
-        <div className={s.layout__containers}>
+        <div className="layout__containers">
           <ScrollableAnchor id="home">
             <Home />
           </ScrollableAnchor>

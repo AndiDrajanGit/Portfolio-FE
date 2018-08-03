@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 
-import s from './loader.scss';
+import './Loader.scss';
 
 class Loader extends React.Component {
   static propTypes = {
@@ -31,10 +31,10 @@ class Loader extends React.Component {
     const {isVisible, theme} = this.props;
     return (
       <div className={cx(
-        s.loader,
-        s[`loader_theme_${theme}`],
-        isVisible ? '' : s.loader_fadeout,
-        this.state.isHidden ? s.hidden : ''
+        "loader",
+        `loader_theme_${theme}`,
+        isVisible ? '' : "loader--fadeout",
+        this.state.isHidden ? "hidden" : ''
       )} />
     );
   };

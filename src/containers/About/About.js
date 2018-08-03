@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 
-import s from './about.scss';
+import './About.scss';
 
-import Background from '../../components/Background';
-import Loader from '../../components/Loader';
+import Background from 'components/Background';
+import Loader from 'components/Loader';
 
-import bg from '../../images/bg_02.jpg';
+import bg from 'images/bg_02.jpg';
 
 class About extends React.Component {
   static propTypes = {
@@ -19,12 +19,12 @@ class About extends React.Component {
     const isDescriptionLoaded = !description.isPending && description.isLoaded;
 
     return (
-      <div className={cx(s.page, s.about)}>
+      <div className="page page-about">
         <Background image={bg} overlayOpacity={0.7} />
-        <div className={s.about__description}>
+        <div className="page-about__description">
           <Loader isVisible={!isDescriptionLoaded} />
           {isDescriptionLoaded &&
-            <div className={s.about__content}>
+            <div className="page-about__content">
               content here
             </div>
           }

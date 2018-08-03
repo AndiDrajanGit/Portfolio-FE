@@ -56,7 +56,7 @@ module.exports = {
                   loader: 'css-loader',
                   options: {
                     modules: true,
-                    localIdentName: '[name]__[local]'
+                    localIdentName: '[local]'
                     // localIdentName: envNode === '"development"' ? '[local]' : '[name]__[local]__[hash:base64:5]'
                   }
                 },
@@ -75,7 +75,7 @@ module.exports = {
                     modules: true,
                     sourceMap: true,
                     importLoaders: 2,
-                    localIdentName: '[name]__[local]'
+                    localIdentName: '[local]'
                     // localIdentName: envNode === '"development"' ? '[local]' : '[name]__[local]__[hash:base64:5]'
                   }
                 },

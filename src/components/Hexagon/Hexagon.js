@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 
-import s from './hexagon.scss';
+import './Hexagon.scss';
 
 class Hexagon extends React.Component {
   static propTypes = {
@@ -17,9 +17,9 @@ class Hexagon extends React.Component {
     const {className, width, height, backgroundImage, children} = this.props;
 
     return (
-      <div className={cx(s.hexagon, className)} style={{width: width, height: height}}>
-        <div className={s.hexagon__inner}>
-          <div className={s.hexagon__inner__content} style={{backgroundImage: `url(${backgroundImage})`}}>
+      <div className={cx("hexagon", className)} style={{width: width, height: height}}>
+        <div className={"hexagon__inner"}>
+          <div className={"hexagon__inner__content"} style={{backgroundImage: `url(${backgroundImage})`}}>
             {children}
           </div>
         </div>

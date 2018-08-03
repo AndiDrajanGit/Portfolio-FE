@@ -3,7 +3,6 @@
 .header {
   background-color: $colorGrey;
   color: $colorWhite;
-  opacity: 0;
   width: 100%;
   height: $heightHeader;
   position: fixed;
@@ -11,8 +10,7 @@
   left: 0;
   z-index: 200;
   transition: all .5s;
-  &_visible {
-    opacity: 1;
+  &--visible {
     top: 0;
     transition: all .5s;
   }
@@ -46,7 +44,7 @@
       &:not(:first-child) {
         margin-left: 50px;
       }
-      &_active, &:hover {
+      &--active, &:hover {
         color: $colorGreenLight;
         transition: all .2s;
       }

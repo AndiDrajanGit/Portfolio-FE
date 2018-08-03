@@ -2,16 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 
-import s from './home.scss';
+import './Home.scss';
 
-import Background from '../../components/Background';
-import Hexagon from '../../components/Hexagon';
-import HomeNavItem from '../../components/HomeNavItem';
+import Background from 'components/Background';
+import Hexagon from 'components/Hexagon';
+import HomeNavItem from 'components/HomeNavItem';
 
-import bg from '../../images/bg_01.jpg';
-import logo from '../../images/logo.png';
+import bg from 'images/bg_01.jpg';
+import logo from 'images/logo.png';
 
-import {NAV} from '../../constants/AppConsts';
+import {NAV} from 'constants/AppConsts';
 
 class Home extends React.Component {
   static propTypes = {
@@ -19,25 +19,25 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className={cx(s.page, s.home)}>
+      <div className="page page-home">
         <Background image={bg} overlayOpacity={0.75} />
-        <Hexagon className={s.home__logo} width="300px" height="250px">
+        <Hexagon className="page-home__logo" width="300px" height="250px">
           <img src={logo} alt="logo" />
         </Hexagon>
-        <table className={s.home__content}>
+        <table className="page-home__content">
           <tbody>
             <tr>
-              <td className={s.home__title}>
-                <h1 className={s.font_bold}>Andi Drajan</h1>
+              <td className="page-home__title">
+                <h1 className="font_bold">Andi Drajan</h1>
                 <h2>
                   <span>web designer</span>
-                  <span className={s['mobile-hide']}> | </span>
+                  <span className="mobile-hide"> | </span>
                   <span>web developer</span>
                 </h2>
               </td>
             </tr>
             <tr>
-              <td className={s.home__nav}>
+              <td className="page-home__nav">
                 {NAV.map((item, key) => (
                   item.showOnHome &&
                     <HomeNavItem key={key} link={`#${item.title}`} icon={item.icon} text={item.title} />

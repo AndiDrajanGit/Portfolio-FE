@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 
-import s from './footer.scss';
+import './Footer.scss';
 
 class Footer extends React.Component {
   static propTypes = {
@@ -10,7 +10,7 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className={s.footer}>
+      <div className="footer">
         footer
       </div>
     );

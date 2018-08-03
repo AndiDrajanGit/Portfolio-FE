@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 
-import s from './contact.scss';
+import './Contact.scss';
 
 class Contact extends React.Component {
   static propTypes = {
@@ -10,7 +10,7 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div className={cx(s.page, s.contact)}>
+      <div className="page page-contact">
         contact
       </div>
     );

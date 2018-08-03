@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import cx from 'classnames';
 
-import s from './background.scss';
+import './Background.scss';
 
 class Background extends React.Component {
   static propTypes = {
@@ -13,8 +13,8 @@ class Background extends React.Component {
   render() {
     const {image, overlayOpacity} = this.props;
     return (
-      <div className={s.background} style={{backgroundImage: `url(${image})`}}>
-        <div className={s.background__overlay} style={{opacity: overlayOpacity}} />
+      <div className="background" style={{backgroundImage: `url(${image})`}}>
+        <div className="background__overlay" style={{opacity: overlayOpacity}} />
       </div>
     );
   };
