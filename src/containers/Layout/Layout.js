@@ -44,9 +44,7 @@ class Layout extends React.Component {
       <div id="layout" className="layout">
         <Header />
         <div className="layout__containers">
-          <ScrollableAnchor id="home">
-            <Home />
-          </ScrollableAnchor>
+          <Home />
           <ScrollableAnchor id="about">
             <About
               description={description}

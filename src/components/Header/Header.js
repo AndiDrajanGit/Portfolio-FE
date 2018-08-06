@@ -6,7 +6,8 @@ import './Header.scss';
 
 import logo from 'images/logo.png';
 
-import {NAV} from 'constants/AppConsts';
+import { NAV } from 'constants/AppConsts';
+import { scrollToTop } from 'utils/site';
 
 let winHeight = window.innerHeight;
 
@@ -37,6 +38,13 @@ class Header extends React.Component {
     this.setState({visible: scrollTop >= winHeight})
   };
 
+  handleClick = (e, link) => {
+    if (link === '') {
+      e.preventDefault();
+      scrollToTop(500);
+    }
+  };
+
   setActiveNavItem = () => {
     this.setState({activeNavItem: window.location.hash.substr(1)});
   };
@@ -54,7 +62,8 @@ class Header extends React.Component {
             {NAV.map((item, key) => (
               <a
                 key={key}
-                href={`#${item.title}`}
+                href={item.link}
+                onClick={(e) => this.handleClick(e, item.link)}
                 className={cx(
                   "header__nav__item",
                   this.state.activeNavItem === item.title ? "header__nav__item--active" : ''

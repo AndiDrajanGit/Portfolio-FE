@@ -1,6 +1,4 @@
-import PropTypes from 'prop-types';
 import React from 'react';
-import cx from 'classnames';
 
 import './Home.scss';
 
@@ -14,9 +12,6 @@ import logo from 'images/logo.png';
 import {NAV} from 'constants/AppConsts';
 
 class Home extends React.Component {
-  static propTypes = {
-  }
-
   render() {
     return (
       <div className="page page-home">
@@ -40,7 +35,7 @@ class Home extends React.Component {
               <td className="page-home__nav">
                 {NAV.map((item, key) => (
                   item.showOnHome &&
-                    <HomeNavItem key={key} link={`#${item.title}`} icon={item.icon} text={item.title} />
+                    <HomeNavItem key={key} link={item.link} icon={item.icon} text={item.title} />
                 ))}
               </td>
             </tr>

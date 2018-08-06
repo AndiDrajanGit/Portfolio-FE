@@ -10,10 +10,6 @@ import Loader from 'components/Loader';
 import bg from 'images/bg_02.jpg';
 
 class About extends React.Component {
-  static propTypes = {
-    description: PropTypes.object.isRequired
-  }
-
   render() {
     const {description} = this.props;
     const isDescriptionLoaded = !description.isPending && description.isLoaded;
@@ -33,6 +29,10 @@ class About extends React.Component {
     );
   };
 }
+
+About.propTypes = {
+  description: PropTypes.object.isRequired
+};
 
 
 export default About;
