@@ -41,7 +41,7 @@ class Header extends React.Component {
     if (crtWinHeight !== winHeight) {
       winHeight = crtWinHeight;
     }
-    this.setState({ visible: scrollTop >= winHeight });
+    this.setState({ visible: scrollTop >= winHeight - 100 });
   };
 
   render() {

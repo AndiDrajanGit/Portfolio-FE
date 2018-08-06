@@ -59,7 +59,7 @@ class Home extends PureComponent {
           </div>
           <div className="home-page__resume-wrapper">
             <div className="home-page__resume">
-              <a className="font_medium">Download CV</a>
+              <a className="font_medium">Download Resume</a>
             </div>
           </div>
         </div>
