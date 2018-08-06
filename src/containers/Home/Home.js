@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './Home.scss';
-
 import Background from 'components/Background';
 import Hexagon from 'components/Hexagon';
 import HomeNavItem from 'components/HomeNavItem';
@@ -9,7 +7,9 @@ import HomeNavItem from 'components/HomeNavItem';
 import bg from 'images/bg_01.jpg';
 import logo from 'images/logo.png';
 
-import {NAV} from 'constants/AppConsts';
+import { NAV } from 'constants/AppConsts';
+
+import './Home.scss';
 
 class Home extends React.Component {
   render() {
@@ -33,18 +33,19 @@ class Home extends React.Component {
             </tr>
             <tr>
               <td className="page-home__nav">
-                {NAV.map((item, key) => (
-                  item.showOnHome &&
-                    <HomeNavItem key={key} link={item.link} icon={item.icon} text={item.title} />
-                ))}
+                {NAV.map(
+                  (item, key) =>
+                    item.showOnHome && (
+                      <HomeNavItem key={key} link={item.link} icon={item.icon} text={item.title} />
+                    )
+                )}
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     );
-  };
+  }
 }
-
 
 export default Home;
