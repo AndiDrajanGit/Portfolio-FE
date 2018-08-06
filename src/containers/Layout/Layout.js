@@ -1,10 +1,10 @@
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor'
+import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
-import './Layout.scss';
+import * as descriptionActions from 'actions/description';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -13,7 +13,7 @@ import About from 'containers/About';
 import Portfolio from 'containers/Portfolio';
 import Contact from 'containers/Contact';
 
-import * as descriptionActions from 'actions/description';
+import './Layout.scss';
 
 const mapStateToProps = state => ({
   description: state.description
@@ -24,21 +24,16 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class Layout extends React.Component {
-  static propTypes = {
-    descriptionActions: PropTypes.object,
-    description: PropTypes.object
-  }
-
   componentWillMount = () => {
     this.props.descriptionActions.getDescription();
   };
 
   componentDidMount = () => {
-    configureAnchors({scrollDuration: 750});
+    configureAnchors({ scrollDuration: 750 });
   };
 
   render() {
-    const {description} = this.props;
+    const { description } = this.props;
 
     return (
       <div id="layout" className="layout">
@@ -46,9 +41,7 @@ class Layout extends React.Component {
         <div className="layout__containers">
           <Home />
           <ScrollableAnchor id="about">
-            <About
-              description={description}
-            />
+            <About description={description} />
           </ScrollableAnchor>
           <ScrollableAnchor id="portfolio">
             <Portfolio />
@@ -60,8 +53,15 @@ class Layout extends React.Component {
         <Footer />
       </div>
     );
-  };
+  }
 }
 
+Layout.propTypes = {
+  descriptionActions: PropTypes.object,
+  description: PropTypes.object
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Layout);

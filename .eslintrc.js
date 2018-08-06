@@ -46,6 +46,7 @@ module.exports = {
     ],
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
     'react/prefer-stateless-function': 'off',
+    "react/forbid-prop-types": "off",
     'prettier/prettier': 'error'
   },
   'settings': {

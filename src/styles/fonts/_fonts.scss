@@ -93,42 +93,14 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon_angle-right:before {
-  content: '\e800';
-}
-.icon_caret-left:before {
-  content: '\e801';
-}
-.icon_caret-right:before {
-  content: '\e802';
-}
-.icon_code:before {
-  content: '\e803';
-}
-.icon_edit:before {
-  content: '\e804';
-}
-.icon_envelope:before {
-  content: '\e805';
-}
-.icon_facebook:before {
-  content: '\e806';
-}
-.icon_globe:before {
-  content: '\e807';
-}
-.icon_info:before {
-  content: '\e808';
-}
-.icon_linkedin:before {
-  content: '\e809';
-}
-.icon_phone:before {
-  content: '\e80a';
-}
-.icon_search:before {
-  content: '\e80b';
-}
-.icon_tiles:before {
-  content: '\e80c';
-}
+.icon-edit:before { content: '\e800'; }
+.icon-code:before { content: '\e801'; }
+.icon-search:before { content: '\e802'; }
+.icon-link:before { content: '\e803'; }
+.icon-angle-left:before { content: '\e804'; }
+.icon-angle-right:before { content: '\e805'; }
+.icon-phone:before { content: '\e806'; }
+.icon-envelope:before { content: '\e807'; }
+.icon-facebook:before { content: '\e808'; }
+.icon-linkedin:before { content: '\e809'; }
+.icon-file:before { content: '\e80a'; }
