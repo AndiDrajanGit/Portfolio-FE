@@ -1,21 +1,13 @@
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import cx from 'classnames';
 
 import './Portfolio.scss';
 
-class Portfolio extends React.Component {
-  static propTypes = {
-  }
-
+class Portfolio extends PureComponent {
   render() {
-    return (
-      <div className="page page-portfolio">
-        portfolio
-      </div>
-    );
-  };
+    return <div className="page portfolio-page">portfolio</div>;
+  }
 }
-
 
 export default Portfolio;

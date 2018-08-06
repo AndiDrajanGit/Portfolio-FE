@@ -9,19 +9,16 @@ export const NAV = [
   {
     title: 'about',
     link: '#about',
-    showOnHome: true,
-    icon: 'info'
+    showOnHome: true
   },
   {
     title: 'portfolio',
     link: '#portfolio',
-    showOnHome: true,
-    icon: 'tiles'
+    showOnHome: true
   },
   {
     title: 'contact',
     link: '#contact',
-    showOnHome: true,
-    icon: 'envelope'
-  },
+    showOnHome: true
+  }
 ];

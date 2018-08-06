@@ -1,48 +1,68 @@
-import React from 'react';
+import React, { Fragment, PureComponent } from 'react';
 
+import { NAV } from 'constants/AppConsts';
+
+import Loader from 'components/Loader';
 import Background from 'components/Background';
 import Hexagon from 'components/Hexagon';
-import HomeNavItem from 'components/HomeNavItem';
 
 import bg from 'images/bg_01.jpg';
 import logo from 'images/logo.png';
 
-import { NAV } from 'constants/AppConsts';
-
 import './Home.scss';
 
-class Home extends React.Component {
+class Home extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true
+    };
+  }
+
+  imageLoaded = () => {
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 1000);
+  };
+
   render() {
+    const { isLoading } = this.state;
     return (
-      <div className="page page-home">
-        <Background image={bg} overlayOpacity={0.75} />
-        <Hexagon className="page-home__logo" width="300px" height="250px">
+      <div className="page home-page">
+        <Loader isVisible={isLoading} backgroundColor="white" />
+        <Background image={bg} overlayOpacity={0.75} onImageLoaded={this.imageLoaded} />
+        <Hexagon className="home-page__logo">
           <img src={logo} alt="logo" />
         </Hexagon>
-        <table className="page-home__content">
-          <tbody>
-            <tr>
-              <td className="page-home__title">
-                <h1 className="font_bold">Andi Drajan</h1>
-                <h2>
-                  <span>web designer</span>
-                  <span className="mobile-hide"> | </span>
-                  <span>web developer</span>
-                </h2>
-              </td>
-            </tr>
-            <tr>
-              <td className="page-home__nav">
-                {NAV.map(
-                  (item, key) =>
-                    item.showOnHome && (
-                      <HomeNavItem key={key} link={item.link} icon={item.icon} text={item.title} />
-                    )
-                )}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="home-page__content">
+          <div className="home-page__title-wrapper">
+            <div className="home-page__title">
+              <h1 className="font_bold">Andi Drajan</h1>
+              <h2>
+                <span>web designer</span>
+                <span className="mobile-hide"> | </span>
+                <span>web developer</span>
+              </h2>
+            </div>
+          </div>
+          <div className="home-page__nav-wrapper">
+            <div className="home-page__nav">
+              {NAV.map(
+                (item, index) =>
+                  item.showOnHome && (
+                    <a key={index} className="home-page__nav__item font_medium" href={item.link}>
+                      {item.title}
+                    </a>
+                  )
+              )}
+            </div>
+          </div>
+          <div className="home-page__resume-wrapper">
+            <div className="home-page__resume">
+              <a className="font_medium">Download CV</a>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

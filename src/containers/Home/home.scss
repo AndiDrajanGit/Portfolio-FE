@@ -1,13 +1,15 @@
 @import '~styles/resources';
 
-.page-home {
+.home-page {
   text-align: center;
   padding-top: 0 !important;
   height: 100vh;
-  position: relative;
   &__logo {
+    overflow: hidden;
     margin: 0 auto;
     margin-top: -130px;
+    width: 300px;
+    height: 250px;
     img {
       margin-top: 145px;
       width: 100px;
@@ -15,14 +17,19 @@
   }
   &__content {
     float: left;
-    color: $colorWhite;
     width: 100%;
-    height: calc(100vh - 130px);
+    height: calc(100vh - 120px);
+  }
+  &__title-wrapper {
+    display: table;
+    float: left;
+    width: 100%;
+    height: 50%;
   }
   &__title {
-    height: 40%;
-    text-align: center;
+    display: table-cell;
     vertical-align: middle;
+    text-align: center;
     h1 {
       color: $colorGreenLight;
       font-size: 85px;
@@ -33,27 +40,148 @@
       font-size: 40px;
     }
   }
-  &__nav {
-    text-align: center;
-    vertical-align: middle;
+  &__nav-wrapper {
+    display: table;
+    float: left;
     width: 100%;
+    height: 15%;
+  }
+  &__nav {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    &__item {
+      cursor: pointer;
+      display: inline-block;
+      border: 1px solid $colorWhite;
+      color: $colorWhite;
+      line-height: 60px;
+      font-size: 20px;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 0 40px;
+      width: 230px;
+      height: 60px;
+      transition: all .5s;
+      &:hover {
+        background: $colorGreenLight;
+        transition: all .2s;
+      }
+    }
+  }
+  &__resume-wrapper {
+    display: table;
+    float: left;
+    width: 100%;
+    height: 35%;
+  }
+  &__resume {
+    display: table-cell;
+    vertical-align: middle;
+    a {
+      cursor: pointer;
+      display: block;
+      color: $colorWhite;
+      font-size: 20px;
+      line-height: 60px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      margin: 0 auto;
+      height: 60px;
+      width: 300px;
+      position: relative;
+      transition: all 0.5s;
+      &:before {
+        content: '';
+        border: 1px solid $colorWhite;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        left: 0;
+      }
+      &:before {
+        border-top: none;
+        bottom: 0;
+        transition: all 0.2s;
+      }
+      &:hover {
+        color: $colorGreenLight;
+        transition: all 0.2s;
+        &:before {
+          border-color: $colorGreenLight;
+          transition: all 0.2s;
+        }
+      }
+  }
+  }
+
+  @media #{$mediaTablet} {
+    &__nav {
+      &__item {
+        margin: 0 20px;
+        width: calc(100% / 3 - 40px);
+      }
+    }
   }
 
   @media #{$mediaMobile} {
+    &__logo {
+      margin-top: -80px;
+      width: 200px;
+      height: 160px;
+      img {
+        margin-top: 85px;
+        width: 75px;
+      }
+    }
+    &__content {
+      height: calc(100vh - 80px);
+    }
+    &__title-wrapper {
+      height: 35%;
+    }
     &__title {
-      vertical-align: bottom;
-      height: 40%;
       h1 {
-        font-size: 55px;
+        font-size: 50px;
       }
       h2 {
         font-size: 25px;
         span {
+          display: block;
           float: left;
-          margin: 5px 0;
           width: 100%;
+          &:first-child {
+            margin-bottom: 5px;
+          }
         }
       }
     }
+    &__nav-wrapper {
+      height: 50%;
+    }
+    &__nav {
+      &__item {
+        display: block;
+        font-size: 18px;
+        line-height: 50px;
+        margin: 20px auto;
+        height: 50px;
+        width: 250px;
+      }
+    }
+    &__resume-wrapper {
+      height: 15%;
+    }
+    &__resume {
+      a {
+        font-size: 18px;
+        line-height: 50px;
+        height: 50px;
+        width: 250px;
+      }
+    }
   }
+
 }

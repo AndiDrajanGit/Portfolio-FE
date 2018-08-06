@@ -1,4 +1,5 @@
 @import './fonts/fonts';
+@import './animations';
 
 // COLORS
 $colorWhite: #ffffff;
@@ -22,24 +23,19 @@ $mediaTablet: "screen and (max-width: #{$widthTablet})";
 // CLASSES
 .page {
   float: left;
+  overflow: hidden;
   padding-top: $heightHeader;
   width: 100%;
   min-height: 100vh;
   position: relative;
 }
-.font {
-  &_normal {
-    font-weight: normal;
-  }
-  &_medium {
-    font-weight: 500;
-  }
-  &_bold {
-    font-weight: bold;
-  }
-}
 .desktop-hide {
   display: none;
+}
+.mobile-hide {
+  @media #{$mediaMobile} {
+    display: none !important;
+  }
 }
 .hidden {
   display: none;
@@ -52,61 +48,4 @@ $mediaTablet: "screen and (max-width: #{$widthTablet})";
   -moz-transform: $value;
   -ms-transform: $value;
   -o-transform: $value;
-}
-
-@mixin animation($value) {
-  animation: $value;
-  -webkit-animation: $value;
-  -moz-animation: $value;
-  -ms-animation: $value;
-  -o-animation: $value;
-}
-
-@media #{$mediaMobile} {
-  .mobile-hide {
-    display: none;
-  }
-}
-
-// ANIMATIONS
-@keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-@webkit-keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-@moz-keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-@ms-keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-@o-keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeout {
-  from {opacity: 1;}
-  to {opacity: 0;}
-}
-@webkit-keyframes fadeout {
-  from {opacity: 1;}
-  to {opacity: 0;}
-}
-@moz-keyframes fadeout {
-  from {opacity: 1;}
-  to {opacity: 0;}
-}
-@ms-keyframes fadeout {
-  from {opacity: 1;}
-  to {opacity: 0;}
-}
-@o-keyframes fadeout {
-  from {opacity: 1;}
-  to {opacity: 0;}
 }

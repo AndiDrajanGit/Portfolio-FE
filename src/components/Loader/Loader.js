@@ -1,19 +1,10 @@
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import cx from 'classnames';
 
 import './Loader.scss';
 
-class Loader extends React.Component {
-  static propTypes = {
-    isVisible: PropTypes.bool.isRequired,
-    theme: PropTypes.string
-  };
-
-  static defaultProps = {
-    theme: 'green'
-  };
-
+class Loader extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,24 +12,37 @@ class Loader extends React.Component {
     };
   }
 
-  componentWillReceiveProps = (newProps) => {
+  componentWillReceiveProps = newProps => {
     setTimeout(() => {
-      this.setState({isHidden: !newProps.isVisible});
-    }, 2000);
+      this.setState({ isHidden: !newProps.isVisible });
+    }, 1000);
   };
 
   render() {
-    const {isVisible, theme} = this.props;
+    const { isVisible, backgroundColor, theme } = this.props;
     return (
-      <div className={cx(
-        "loader",
-        `loader_theme_${theme}`,
-        isVisible ? '' : "loader--fadeout",
-        this.state.isHidden ? "hidden" : ''
-      )} />
+      <div
+        className={cx(
+          'loader',
+          `loader_theme_${theme}`,
+          isVisible ? '' : 'loader_fadeout',
+          this.state.isHidden ? 'hidden' : ''
+        )}
+        style={{ backgroundColor: `${backgroundColor}` }}
+      />
     );
-  };
+  }
 }
 
+Loader.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  backgroundColor: PropTypes.string,
+  theme: PropTypes.string
+};
+
+Loader.defaultProps = {
+  backgroundColor: 'transparent',
+  theme: 'green'
+};
 
 export default Loader;

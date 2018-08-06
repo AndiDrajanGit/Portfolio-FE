@@ -9,6 +9,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1000;
   &_theme {
     &_green {
       background-image: url('images/loader_green.svg');
@@ -17,7 +18,7 @@
       background-image: url('images/loader_white.svg');
     }
   }
-  &--fadeout {
-    @include animation(fadeout 2s);
+  &_fadeout {
+    @include animation(fadeout 1s);
   }
 }

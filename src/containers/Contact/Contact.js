@@ -1,21 +1,13 @@
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import cx from 'classnames';
 
 import './Contact.scss';
 
-class Contact extends React.Component {
-  static propTypes = {
-  }
-
+class Contact extends PureComponent {
   render() {
-    return (
-      <div className="page page-contact">
-        contact
-      </div>
-    );
-  };
+    return <div className="page contact-page">contact</div>;
+  }
 }
-
 
 export default Contact;
