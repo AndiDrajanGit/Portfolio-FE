@@ -57,8 +57,8 @@ class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  descriptionActions: PropTypes.object,
-  description: PropTypes.object
+  descriptionActions: PropTypes.object.isRequired,
+  description: PropTypes.object.isRequired
 };
 
 export default connect(

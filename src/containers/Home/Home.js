@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
 import { NAV } from 'constants/AppConsts';
 
@@ -59,7 +59,9 @@ class Home extends PureComponent {
           </div>
           <div className="home-page__resume-wrapper">
             <div className="home-page__resume">
-              <a className="font_medium">Download Resume</a>
+              <a href="#contact" className="font_medium">
+                Download Resume
+              </a>
             </div>
           </div>
         </div>

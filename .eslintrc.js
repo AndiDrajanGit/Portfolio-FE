@@ -16,6 +16,7 @@ module.exports = {
   },
   'rules': {
     'import/no-extraneous-dependencies': ['error', { 'packageDir': '.' }],
+    'import/prefer-default-export': 'off',
     'max-len': ['error', { 'code': 100, ignoreUrls: true }],
     'no-underscore-dangle': 'off',
     'react/no-array-index-key': 'off',
@@ -46,7 +47,7 @@ module.exports = {
     ],
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
     'react/prefer-stateless-function': 'off',
-    "react/forbid-prop-types": "off",
+    'react/forbid-prop-types': 'off',
     'prettier/prettier': 'error'
   },
   'settings': {

@@ -1,4 +1,4 @@
-import {handleActions} from 'redux-actions';
+import { handleActions } from 'redux-actions';
 
 import * as actions from '../actions/description';
 
@@ -15,12 +15,12 @@ const description = handleActions(
       isLoaded: false,
       isPending: true
     }),
-    [actions.set]: (state, {payload}) => ({
+    [actions.set]: (state, { payload }) => ({
       ...state,
       data: payload && payload !== 'undefined' ? payload : {},
-      isLoaded: payload && payload !== 'undefined' ? true : false,
+      isLoaded: !!(payload && payload !== 'undefined'),
       isPending: false
-    }),
+    })
   },
   defaultState
 );

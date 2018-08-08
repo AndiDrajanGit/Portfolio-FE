@@ -9,4 +9,4 @@ export const scrollToTop = duration => {
       }
     }, 10);
   }
-}
+};
