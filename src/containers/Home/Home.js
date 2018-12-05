@@ -37,7 +37,7 @@ class Home extends PureComponent {
         <div className="home-page__content">
           <div className="home-page__title-wrapper">
             <div className="home-page__title">
-              <h1 className="font_bold">Andi Drajan</h1>
+              <h1 className="font-bold">Andi Drajan</h1>
               <h2>
                 <span>web designer</span>
                 <span className="mobile-hide"> | </span>
@@ -50,7 +50,7 @@ class Home extends PureComponent {
               {NAV.map(
                 (item, index) =>
                   item.showOnHome && (
-                    <a key={index} className="home-page__nav__item font_medium" href={item.link}>
+                    <a key={index} className="home-page__nav__item font-medium" href={item.link}>
                       {item.title}
                     </a>
                   )
@@ -59,7 +59,7 @@ class Home extends PureComponent {
           </div>
           <div className="home-page__resume-wrapper">
             <div className="home-page__resume">
-              <a href="#contact" className="font_medium">
+              <a href="#contact" className="font-medium">
                 Download Resume
               </a>
             </div>

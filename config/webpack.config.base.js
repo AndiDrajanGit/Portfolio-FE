@@ -3,9 +3,6 @@ const paths = require('./paths');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
-const getClientEnvironment = require('./env');
-
-const envNode = getClientEnvironment().stringified['process.env'].NODE_ENV;
 
 module.exports = {
   resolve: {
@@ -14,11 +11,9 @@ module.exports = {
     ),
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      'react-native': 'react-native-web',
+      'react-native': 'react-native-web'
     },
-    plugins: [
-      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
-    ],
+    plugins: [new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson])]
   },
   module: {
     strictExportPresence: true,
@@ -31,11 +26,12 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
+              emitWarning: true
             },
-            loader: require.resolve('eslint-loader'),
-          },
+            loader: require.resolve('eslint-loader')
+          }
         ],
-        include: paths.appSrc,
+        include: paths.appSrc
       },
       {
         oneOf: [
@@ -44,8 +40,8 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              compact: true,
-            },
+              compact: true
+            }
           },
           {
             test: /\.css$/,
@@ -57,7 +53,6 @@ module.exports = {
                   options: {
                     modules: true,
                     localIdentName: '[local]'
-                    // localIdentName: envNode === '"development"' ? '[local]' : '[name]__[local]__[hash:base64:5]'
                   }
                 },
                 'postcss-loader'
@@ -76,7 +71,6 @@ module.exports = {
                     sourceMap: true,
                     importLoaders: 2,
                     localIdentName: '[local]'
-                    // localIdentName: envNode === '"development"' ? '[local]' : '[name]__[local]__[hash:base64:5]'
                   }
                 },
                 'sass-loader'
@@ -110,13 +104,13 @@ module.exports = {
               /\.css$/,
               /\.scss$/,
               /\.(jpe?g|png|bmp|gif|svg)$/,
-              /\.(woff|woff2|eot|ttf|svg)$/,
+              /\.(woff|woff2|eot|ttf|svg)$/
             ],
             options: {
-              name: 'static/media/[name].[hash:8].[ext]',
-            },
-          },
-        ],
+              name: 'static/media/[name].[hash:8].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
@@ -125,17 +119,6 @@ module.exports = {
     fs: 'empty',
     net: 'empty',
     tls: 'empty',
-    child_process: 'empty',
-  },
-}
-
-
-
-
-
-
-
-
-
-
-
+    child_process: 'empty'
+  }
+};

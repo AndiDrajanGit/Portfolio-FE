@@ -1,0 +1,25 @@
+@import "~styles/resources";
+
+.page-title {
+  float: left;
+  width: 100%;
+  height: $heightTitle;
+  span {
+    float: right;
+    font-size: 36px;
+    border-bottom: 2px solid #000;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    width: calc(50% + 100px);
+  }
+  &--theme {
+    &-white {
+      span {
+        color: $colorWhite;
+        border-color: $colorWhite;
+      }
+    }
+  }
+}

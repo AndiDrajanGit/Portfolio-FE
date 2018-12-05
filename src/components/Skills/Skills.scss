@@ -1,0 +1,11 @@
+@import '~styles/resources';
+
+.skills {
+  border-left: 2px solid $colorWhite;
+  padding: 10px 0;
+  padding-left: 15px;
+  h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+  }
+}

@@ -2,16 +2,39 @@
 
 .about-page {
   color: $colorWhite;
-  &__description {
-    float: left;
-    width: 50%;
-    min-height: calc(100vh - #{$heightHeader});
-    position: relative;
-  }
   &__content {
-    background-color: $colorGreenDark;
+    float: left;
+    display: table;
     width: 100%;
-    height: calc(100vh - #{$heightHeader});
+    min-height: calc(100vh - #{$heightHeader} - #{$heightTitle});
+  }
+  &__description {
+    display: table-cell;
+    vertical-align: middle;
+    width: 40%;
+    position: relative;
     @include animation(fadein 2s);
+  }
+  &__skills {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 50px;
+    width: 60%;
+  }
+
+  @media #{$mediaTablet} {
+    &__content {
+      display: block;
+    }
+    &__description {
+      display: block;
+      float: left;
+      margin: 50px 0;
+      width: 100%;
+    }
+    &__skills {
+      display: block;
+      float: left;
+    }
   }
 }

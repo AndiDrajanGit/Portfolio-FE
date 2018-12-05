@@ -1,9 +1,6 @@
-'use strict';
-
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.base.js');
 
-const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -11,7 +8,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
@@ -27,11 +23,6 @@ if (env.stringified['process.env'].NODE_ENV !== '"production"') {
 
 const cssFilename = 'static/css/[name].[contenthash:8].css';
 
-const extractTextPluginOptions = shouldUseRelativeAssetPaths
-  ?
-    { publicPath: Array(cssFilename.split('/').length).join('../') }
-  : {};
-
 module.exports = merge(baseConfig, {
   bail: true,
   devtool: shouldUseSourceMap ? 'source-map' : false,
@@ -40,11 +31,9 @@ module.exports = merge(baseConfig, {
     path: paths.appBuild,
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
-    publicPath: publicPath,
+    publicPath,
     devtoolModuleFilenameTemplate: info =>
-      path
-        .relative(paths.appSrc, info.absoluteResourcePath)
-        .replace(/\\/g, '/'),
+      path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/')
   },
   plugins: [
     new InterpolateHtmlPlugin(env.raw),
@@ -61,29 +50,29 @@ module.exports = merge(baseConfig, {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true,
-      },
+        minifyURLs: true
+      }
     }),
     new webpack.DefinePlugin(env.stringified),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
-        comparisons: false,
+        comparisons: false
       },
       mangle: {
-        safari10: true,
+        safari10: true
       },
       output: {
         comments: false,
-        ascii_only: true,
+        ascii_only: true
       },
-      sourceMap: shouldUseSourceMap,
+      sourceMap: shouldUseSourceMap
     }),
     new ExtractTextPlugin({
-      filename: cssFilename,
+      filename: cssFilename
     }),
     new ManifestPlugin({
-      fileName: 'asset-manifest.json',
+      fileName: 'asset-manifest.json'
     }),
     new SWPrecacheWebpackPlugin({
       dontCacheBustUrlsMatching: /\.\w{8}\./,
@@ -98,12 +87,11 @@ module.exports = merge(baseConfig, {
         console.log(message);
       },
       minify: true,
-      navigateFallback: publicUrl + '/index.html',
+      navigateFallback: `${publicUrl}/index.html`,
       navigateFallbackWhitelist: [/^(?!\/__).*/],
-      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new ExtractTextPlugin({filename: 'style.css', allChunks: true})
-  ],
+    new ExtractTextPlugin({ filename: 'style.css', allChunks: true })
+  ]
 });
-

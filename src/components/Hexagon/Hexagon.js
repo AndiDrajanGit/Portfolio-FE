@@ -26,7 +26,7 @@ Hexagon.propTypes = {
 Hexagon.defaultProps = {
   className: '',
   backgroundImage: '',
-  children: ''
+  children: null
 };
 
 export default Hexagon;

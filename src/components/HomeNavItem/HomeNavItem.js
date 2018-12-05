@@ -17,7 +17,7 @@ class HomeNavItem extends React.Component {
         <div className="home-nav-item__icon">
           <span className={`icon_${icon}`} />
         </div>
-        <div className={cx("home-nav-item__text", "font_medium")}>
+        <div className={cx("home-nav-item__text", "font-medium")}>
           {text}
         </div>
       </a>
