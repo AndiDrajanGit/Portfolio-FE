@@ -18,4 +18,8 @@
     left: 0;
     right: 0;
   }
+
+  @media #{$mediaTablet} {
+    background-attachment: scroll;
+  }
 }

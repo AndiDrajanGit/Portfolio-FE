@@ -1,5 +1,5 @@
-// export const API_URL = 'http://localhost/portfolio_admin/wp-json/wp/v2';
-export const API_URL = 'http://localhost/portfolio_admin/wp-json/acf/v3';
+export const API_URL = 'http://localhost/portfolio_admin/wp-json/wp/v2';
+// export const API_URL = 'http://localhost/portfolio_admin/wp-json/acf/v3';
 
 export const NAV = [
   {

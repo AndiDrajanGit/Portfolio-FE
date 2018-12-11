@@ -1,11 +1,73 @@
 @import '~styles/resources';
 
 .skills {
+  float: left;
   border-left: 2px solid $colorWhite;
   padding: 10px 0;
   padding-left: 15px;
+  width: 100%;
+  @include animation(fadein 2s);
   h2 {
     font-size: 28px;
     text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+  &__list {
+    float: left;
+    width: 100%;
+    ul {
+      float: left;
+      width: 50%;
+      &:first-child {
+        padding-right: 35px;
+      }
+      &:last-child {
+        padding-left: 35px;
+      }
+    }
+    &__item {
+      float: left;
+      font-size: 16px;
+      line-height: 30px;
+      margin-bottom: 15px;
+      width: 100%;
+      position: relative;
+      &:before, &__percentage {
+        content: '';
+        height: 5px;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+      }
+      &:before {
+        background-color: $colorWhite;
+        width: 100%;
+      }
+      &__percentage {
+        background-color: $colorGreenLight;
+      }
+      h3 {
+        float: left;
+        color: $colorGreenLight;
+      }
+      span {
+        float: right;
+      }
+    }
+  }
+
+  @media #{$mediaMobile} {
+    &__list {
+      ul {
+        width: 100%;
+        &:first-child {
+          padding-right: 10px;
+        }
+        &:last-child {
+          padding-left: 0;
+          padding-right: 10px;
+        }
+      }
+    }
   }
 }

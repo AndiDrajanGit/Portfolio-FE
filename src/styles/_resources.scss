@@ -31,7 +31,10 @@ $mediaTablet: "screen and (max-width: #{$widthTablet})";
   position: relative;
 }
 .desktop-hide {
-  display: none;
+  display: none !important;
+  @media #{$mediaMobile} {
+    display: block !important;
+  }
 }
 .mobile-hide {
   @media #{$mediaMobile} {

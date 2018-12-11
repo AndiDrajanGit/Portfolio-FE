@@ -9,7 +9,7 @@ export const set = createAction('description/SET');
 export const getDescription = () => dispatch => {
   dispatch(get());
   axios
-    .get(`${API_URL}/pages?slug[]=about`)
+    .get(`${API_URL}/pages?slug=about`)
     .then(response => dispatch(set(response.data[0].acf)))
     .catch(err => {
       console.log('Error', err);

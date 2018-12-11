@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
-import * as descriptionActions from 'actions/description';
+import { getDescription } from 'actions/description';
+import { getSkills } from 'actions/skills';
+import { getJobs } from 'actions/jobs';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -15,17 +16,11 @@ import Contact from 'containers/Contact';
 
 import './Layout.scss';
 
-const mapStateToProps = state => ({
-  description: state.description
-});
-
-const mapDispatchToProps = dispatch => ({
-  descriptionActions: bindActionCreators(descriptionActions, dispatch)
-});
-
 class Layout extends React.Component {
   componentWillMount = () => {
-    this.props.descriptionActions.getDescription();
+    this.props.getDescription();
+    this.props.getSkills();
+    this.props.getJobs();
   };
 
   componentDidMount = () => {
@@ -33,7 +28,7 @@ class Layout extends React.Component {
   };
 
   render() {
-    const { description } = this.props;
+    const { description, skills, jobs } = this.props;
 
     return (
       <div id="layout" className="layout">
@@ -41,7 +36,7 @@ class Layout extends React.Component {
         <div className="layout__containers">
           <Home />
           <ScrollableAnchor id="about">
-            <About description={description} />
+            <About description={description} skills={skills} jobs={jobs} />
           </ScrollableAnchor>
           <ScrollableAnchor id="portfolio">
             <Portfolio />
@@ -56,9 +51,25 @@ class Layout extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  description: state.description,
+  skills: state.skills,
+  jobs: state.jobs
+});
+
+const mapDispatchToProps = dispatch => ({
+  getDescription: () => dispatch(getDescription()),
+  getSkills: () => dispatch(getSkills()),
+  getJobs: () => dispatch(getJobs())
+});
+
 Layout.propTypes = {
-  descriptionActions: PropTypes.object.isRequired,
-  description: PropTypes.object.isRequired
+  getDescription: PropTypes.func.isRequired,
+  description: PropTypes.object.isRequired,
+  getSkills: PropTypes.func.isRequired,
+  skills: PropTypes.object.isRequired,
+  getJobs: PropTypes.func.isRequired,
+  jobs: PropTypes.object.isRequired
 };
 
 export default connect(

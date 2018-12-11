@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-import * as actions from 'actions/description';
+import * as actions from 'actions/skills';
 
 const defaultState = {
   data: {},
@@ -8,7 +8,7 @@ const defaultState = {
   isPending: false
 };
 
-const description = handleActions(
+const skills = handleActions(
   {
     [actions.get]: state => ({
       ...state,
@@ -25,4 +25,4 @@ const description = handleActions(
   defaultState
 );
 
-export default description;
+export default skills;
