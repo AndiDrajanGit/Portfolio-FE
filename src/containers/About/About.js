@@ -22,21 +22,19 @@ class About extends PureComponent {
     return (
       <div className="page about-page">
         <PageTitle theme="white" title="About" />
-        <div className="about-page__content">
-          <Background image={bg} overlayOpacity={0.7} />
-          <div className="about-page__description">
-            <Loader isVisible={!isDescriptionLoaded} />
-            {isDescriptionLoaded && <Description data={description.data} />}
-          </div>
-          <div className="about-page__details">
-            <Loader isVisible={!isDetailsLoaded} />
-            {isDetailsLoaded && (
-              <Fragment>
-                <Skills skills={skills.data} />
-                <Jobs jobs={jobs.data} />
-              </Fragment>
-            )}
-          </div>
+        <Background image={bg} overlayOpacity={0.7} />
+        <div className="about-page__description">
+          <Loader isVisible={!isDescriptionLoaded} />
+          {isDescriptionLoaded && <Description data={description.data} />}
+        </div>
+        <div className="about-page__details">
+          <Loader isVisible={!isDetailsLoaded} />
+          {isDetailsLoaded && (
+            <Fragment>
+              <Skills skills={skills.data} />
+              <Jobs jobs={jobs.data} />
+            </Fragment>
+          )}
         </div>
       </div>
     );

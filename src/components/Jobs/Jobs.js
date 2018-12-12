@@ -28,21 +28,26 @@ class Jobs extends PureComponent {
                 className="jobs__list__item"
                 style={{ width: `calc(100% / ${timelineSegments} * ${this.getJobLength(job)})` }}
               >
-                <div className="jobs__list__item__container">
-                  <span className="jobs__list__item__years desktop-hide">
-                    {job.acf.years.start} - {job.acf.years.present ? 'Present' : job.acf.years.end}
+                <span className="jobs__list__item__years desktop-hide">
+                  {job.acf.years.start} - {job.acf.years.present ? 'Present' : job.acf.years.end}
+                </span>
+                <h3 className="font-medium">{job.title.rendered}</h3>
+                {job.acf.positions.map((pos, index) => (
+                  <span key={index} className="jobs__list__item__position">
+                    {pos.position}
                   </span>
-                  <h3 className="font-medium">{job.title.rendered}</h3>
-                  {job.acf.positions.map((pos, index) => (
-                    <span key={index} className="jobs__list__item__position">
-                      {pos.position}
-                    </span>
-                  ))}
-                </div>
+                ))}
               </div>
             ))}
           </div>
           <div className="jobs__timeline mobile-hide">
+            {new Array(timelineSegments).fill().map((year, index) => (
+              <div key={index} className="jobs__timeline__segment">
+                {2011 + index}
+              </div>
+            ))}
+          </div>
+          {/* <div className="jobs__timeline mobile-hide">
             {new Array(timelineSegments).fill().map((year, index) => (
               <div
                 key={index}
@@ -52,7 +57,7 @@ class Jobs extends PureComponent {
                 {2011 + index}
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     );
