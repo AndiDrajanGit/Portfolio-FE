@@ -6,6 +6,7 @@ import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { getDescription } from 'actions/description';
 import { getSkills } from 'actions/skills';
 import { getJobs } from 'actions/jobs';
+import { getProjects } from 'actions/projects';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -21,6 +22,7 @@ class Layout extends React.Component {
     this.props.getDescription();
     this.props.getSkills();
     this.props.getJobs();
+    this.props.getProjects();
   };
 
   componentDidMount = () => {
@@ -28,7 +30,7 @@ class Layout extends React.Component {
   };
 
   render() {
-    const { description, skills, jobs } = this.props;
+    const { description, skills, jobs, projects } = this.props;
 
     return (
       <div id="layout" className="layout">
@@ -39,7 +41,7 @@ class Layout extends React.Component {
             <About description={description} skills={skills} jobs={jobs} />
           </ScrollableAnchor>
           <ScrollableAnchor id="portfolio">
-            <Portfolio />
+            <Portfolio projects={projects} />
           </ScrollableAnchor>
           <ScrollableAnchor id="contact">
             <Contact />
@@ -54,22 +56,26 @@ class Layout extends React.Component {
 const mapStateToProps = state => ({
   description: state.description,
   skills: state.skills,
-  jobs: state.jobs
+  jobs: state.jobs,
+  projects: state.projects
 });
 
 const mapDispatchToProps = dispatch => ({
   getDescription: () => dispatch(getDescription()),
   getSkills: () => dispatch(getSkills()),
-  getJobs: () => dispatch(getJobs())
+  getJobs: () => dispatch(getJobs()),
+  getProjects: () => dispatch(getProjects())
 });
 
 Layout.propTypes = {
   getDescription: PropTypes.func.isRequired,
   description: PropTypes.object.isRequired,
   getSkills: PropTypes.func.isRequired,
+  getProjects: PropTypes.func.isRequired,
   skills: PropTypes.object.isRequired,
   getJobs: PropTypes.func.isRequired,
-  jobs: PropTypes.object.isRequired
+  jobs: PropTypes.object.isRequired,
+  projects: PropTypes.object.isRequired
 };
 
 export default connect(

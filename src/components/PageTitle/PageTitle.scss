@@ -21,5 +21,11 @@
         border-color: $color-white;
       }
     }
+    &-grey {
+      span {
+        color: $color-grey;
+        border-color: $color-grey;
+      }
+    }
   }
 }

@@ -1,5 +1,39 @@
 @import '~styles/resources';
 
 .portfolio-page {
-  background-color: $color-green-light;
+  background-color: $color-white;
+  &__content {
+    float: left;
+    margin-top: 70px;
+    width: 100%;
+    @include animation(fadein 2s);
+  }
+  &__project {
+    $project: &;
+    float: left;
+    background-size: cover;
+    background-position: top center;
+    overflow: hidden;
+    width: 25%;
+    height: 30vw;
+    position: relative;
+    &:hover {
+      #{$project}__hover {
+        opacity: 1;
+        bottom: 0;
+      }
+    }
+    &__hover {
+      background-color: rgba($color-green-light, 0.85);
+      opacity: 0;
+      width: 100%;
+      height: 22vw;
+      position: absolute;
+      bottom: -22vw;
+      left: 0;
+      transition: all .3s ease-in-out;
+      opacity: 1;
+      bottom: 0;
+    }
+  }
 }
