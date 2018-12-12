@@ -1,0 +1,53 @@
+@import '~styles/resources';
+
+.header {
+  background-color: $color-grey;
+  color: $color-white;
+  width: 100%;
+  height: $height-header;
+  position: fixed;
+  top: -#{$height-header};
+  left: 0;
+  z-index: 200;
+  transition: all .5s;
+  &--visible {
+    top: 0;
+    transition: all .5s;
+  }
+  &__content {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+  }
+  &__logo {
+    float: left;
+    display: block;
+    padding: 10px 0;
+    height: 100%;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__nav {
+    float: right;
+    line-height: $height-header;
+    height: 100%;
+    transition: all .2s;
+    &__item {
+      float: left;
+      color: $color-white;
+      font-size: 18px;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:not(:first-child) {
+        margin-left: 50px;
+      }
+      &--active, &:hover {
+        color: $color-green-light;
+        transition: all .2s;
+      }
+    }
+  }
+}

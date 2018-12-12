@@ -1,0 +1,24 @@
+@import '~styles/resources';
+
+.loader {
+  background-size: 200px 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  &_theme {
+    &_green {
+      background-image: url('images/loader_green.svg');
+    }
+    &_white {
+      background-image: url('images/loader_white.svg');
+    }
+  }
+  &_fadeout {
+    @include animation(fadeout 1s);
+  }
+}

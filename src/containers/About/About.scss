@@ -1,0 +1,45 @@
+@import '~styles/resources';
+
+.about-page {
+  color: $color-white;
+  &__content {
+    float: left;
+    display: table;
+    width: 100%;
+    min-height: calc(100vh - #{$height-header} - #{$height-title});
+  }
+  &__description {
+    display: table-cell;
+    vertical-align: middle;
+    width: 35%;
+    position: relative;
+  }
+  &__details {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 60px 50px;
+    width: 65%;
+    position: relative;
+  }
+
+  @media #{$media-tablet} {
+    &__content {
+      display: block;
+    }
+    &__description {
+      display: block;
+      float: left;
+      padding-top: 50px;
+      width: 100%;
+      min-height: 500px;
+    }
+    &__details {
+      display: block;
+      float: left;
+      margin-top: 30px;
+      padding: 40px 10px;
+      width: 100%;
+      min-height: 500px;
+    }
+  }
+}
