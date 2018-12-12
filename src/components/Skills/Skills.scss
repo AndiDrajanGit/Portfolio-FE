@@ -2,7 +2,7 @@
 
 .skills {
   float: left;
-  border-left: 2px solid $colorWhite;
+  border-left: 2px solid $color-white;
   padding: 10px 0;
   padding-left: 15px;
   width: 100%;
@@ -40,15 +40,15 @@
         left: 0;
       }
       &:before {
-        background-color: $colorWhite;
+        background-color: $color-white;
         width: 100%;
       }
       &__percentage {
-        background-color: $colorGreenLight;
+        background-color: $color-green-light;
       }
       h3 {
         float: left;
-        color: $colorGreenLight;
+        color: $color-green-light;
       }
       span {
         float: right;
@@ -56,7 +56,7 @@
     }
   }
 
-  @media #{$mediaMobile} {
+  @media #{$media-mobile} {
     &__list {
       ul {
         width: 100%;

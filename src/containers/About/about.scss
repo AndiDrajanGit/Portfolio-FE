@@ -1,12 +1,12 @@
 @import '~styles/resources';
 
 .about-page {
-  color: $colorWhite;
+  color: $color-white;
   &__content {
     float: left;
     display: table;
     width: 100%;
-    min-height: calc(100vh - #{$heightHeader} - #{$heightTitle});
+    min-height: calc(100vh - #{$height-header} - #{$height-title});
   }
   &__description {
     display: table-cell;
@@ -22,7 +22,7 @@
     position: relative;
   }
 
-  @media #{$mediaTablet} {
+  @media #{$media-tablet} {
     &__content {
       display: block;
     }

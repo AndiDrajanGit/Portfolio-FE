@@ -1,12 +1,12 @@
 @import '~styles/resources';
 
 .header {
-  background-color: $colorGrey;
-  color: $colorWhite;
+  background-color: $color-grey;
+  color: $color-white;
   width: 100%;
-  height: $heightHeader;
+  height: $height-header;
   position: fixed;
-  top: -#{$heightHeader};
+  top: -#{$height-header};
   left: 0;
   z-index: 200;
   transition: all .5s;
@@ -32,12 +32,12 @@
   }
   &__nav {
     float: right;
-    line-height: $heightHeader;
+    line-height: $height-header;
     height: 100%;
     transition: all .2s;
     &__item {
       float: left;
-      color: $colorWhite;
+      color: $color-white;
       font-size: 18px;
       text-decoration: none;
       text-transform: uppercase;
@@ -45,7 +45,7 @@
         margin-left: 50px;
       }
       &--active, &:hover {
-        color: $colorGreenLight;
+        color: $color-green-light;
         transition: all .2s;
       }
     }

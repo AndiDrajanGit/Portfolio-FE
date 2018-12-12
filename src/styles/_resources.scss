@@ -2,42 +2,42 @@
 @import './animations';
 
 // COLORS
-$colorWhite: #ffffff;
-$colorBlack: #000;
-$colorWhiteDefault: #f5f5f5;
-$colorBlackDefault: #0b101c;
-$colorGreenLight: #0eb679;
-$colorGreenDark: #06734b;
-$colorGrey: #1b242f;
+$color-white: #ffffff;
+$color-black: #000;
+$color-white-default: #f5f5f5;
+$color-black-default: #0b101c;
+$color-green-light: #0eb679;
+$color-green-dark: #06734b;
+$color-grey: #1b242f;
 
 // SIZES
-$widthMobile: 600px;
-$widthTablet: 800px;
-$heightHeader: 60px;
-$heightTitle: 70px;
+$width-mobile: 600px;
+$width-tablet: 800px;
+$height-header: 60px;
+$height-title: 70px;
 
 // MEDIA
-$mediaHover: "not all and (hover: none)";
-$mediaMobile: "screen and (max-width: #{$widthMobile})";
-$mediaTablet: "screen and (max-width: #{$widthTablet})";
+$media-hover: "not all and (hover: none)";
+$media-mobile: "screen and (max-width: #{$width-mobile})";
+$media-tablet: "screen and (max-width: #{$width-tablet})";
 
 // CLASSES
 .page {
   float: left;
   overflow: hidden;
-  padding-top: $heightHeader;
+  padding-top: $height-header;
   width: 100%;
   min-height: 100vh;
   position: relative;
 }
 .desktop-hide {
   display: none !important;
-  @media #{$mediaMobile} {
+  @media #{$media-mobile} {
     display: block !important;
   }
 }
 .mobile-hide {
-  @media #{$mediaMobile} {
+  @media #{$media-mobile} {
     display: none !important;
   }
 }

@@ -3,7 +3,7 @@
 .page-title {
   float: left;
   width: 100%;
-  height: $heightTitle;
+  height: $height-title;
   span {
     float: right;
     font-size: 36px;
@@ -17,8 +17,8 @@
   &--theme {
     &-white {
       span {
-        color: $colorWhite;
-        border-color: $colorWhite;
+        color: $color-white;
+        border-color: $color-white;
       }
     }
   }

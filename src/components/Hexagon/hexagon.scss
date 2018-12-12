@@ -10,7 +10,7 @@
     height: 100%;
     @include transform(rotate(-60deg));
     &__content {
-      background-color: $colorGreenLight;
+      background-color: $color-green-light;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
@@ -22,10 +22,3 @@
     }
   }
 }
-
-// .hexagon {
-//   background-image: url('images/hexagon.svg');
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   background-position: center center;
-// }
