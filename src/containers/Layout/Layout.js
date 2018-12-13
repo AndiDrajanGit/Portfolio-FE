@@ -6,7 +6,7 @@ import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { getDescription } from 'actions/description';
 import { getSkills } from 'actions/skills';
 import { getJobs } from 'actions/jobs';
-import { getProjects } from 'actions/projects';
+import { getProjects, getProjectDetails } from 'actions/projects';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -41,7 +41,7 @@ class Layout extends React.Component {
             <About description={description} skills={skills} jobs={jobs} />
           </ScrollableAnchor>
           <ScrollableAnchor id="portfolio">
-            <Portfolio projects={projects} />
+            <Portfolio projects={projects} getProjectDetails={this.props.getProjectDetails} />
           </ScrollableAnchor>
           <ScrollableAnchor id="contact">
             <Contact />
@@ -64,7 +64,8 @@ const mapDispatchToProps = dispatch => ({
   getDescription: () => dispatch(getDescription()),
   getSkills: () => dispatch(getSkills()),
   getJobs: () => dispatch(getJobs()),
-  getProjects: () => dispatch(getProjects())
+  getProjects: () => dispatch(getProjects()),
+  getProjectDetails: id => dispatch(getProjectDetails(id))
 });
 
 Layout.propTypes = {
@@ -72,6 +73,7 @@ Layout.propTypes = {
   description: PropTypes.object.isRequired,
   getSkills: PropTypes.func.isRequired,
   getProjects: PropTypes.func.isRequired,
+  getProjectDetails: PropTypes.func.isRequired,
   skills: PropTypes.object.isRequired,
   getJobs: PropTypes.func.isRequired,
   jobs: PropTypes.object.isRequired,

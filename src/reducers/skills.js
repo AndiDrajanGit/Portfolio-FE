@@ -4,22 +4,19 @@ import * as actions from 'actions/skills';
 
 const defaultState = {
   data: {},
-  isLoaded: false,
-  isPending: false
+  isLoaded: false
 };
 
 const skills = handleActions(
   {
     [actions.get]: state => ({
       ...state,
-      isLoaded: false,
-      isPending: true
+      isLoaded: false
     }),
     [actions.set]: (state, { payload }) => ({
       ...state,
       data: payload && payload !== 'undefined' ? payload : {},
-      isLoaded: !!(payload && payload !== 'undefined'),
-      isPending: false
+      isLoaded: !!(payload && payload !== 'undefined')
     })
   },
   defaultState

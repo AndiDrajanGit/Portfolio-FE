@@ -15,9 +15,8 @@ import './About.scss';
 class About extends PureComponent {
   render() {
     const { description, skills, jobs } = this.props;
-    const isDescriptionLoaded = !description.isPending && description.isLoaded;
-    const isDetailsLoaded =
-      !skills.isPending && skills.isLoaded && (!jobs.isPending && jobs.isLoaded);
+    const isDescriptionLoaded = description.isLoaded;
+    const isDetailsLoaded = skills.isLoaded && jobs.isLoaded;
 
     return (
       <div className="page about-page">

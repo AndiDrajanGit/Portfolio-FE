@@ -48,3 +48,25 @@
   from {opacity: 1;}
   to {opacity: 0;}
 }
+
+@keyframes growIn {
+  from {transform: scaleX(0);}
+  to {transform: scaleX(1);}
+}
+@webkit-keyframes growIn {
+  from {transform: scaleX(0);}
+  to {transform: scaleX(1);}
+}
+@moz-keyframes growIn {
+  from {transform: scaleX(0);}
+  to {transform: scaleX(1);}
+}
+@ms-keyframes growIn {
+  from {transform: scaleX(0);}
+  to {transform: scaleX(1);}
+}
+@o-keyframes growIn {
+  from {transform: scaleX(0);}
+  to {transform: scaleX(1);}
+}
+
