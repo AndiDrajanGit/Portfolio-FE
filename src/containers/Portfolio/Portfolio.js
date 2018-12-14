@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import renderHtml from 'react-render-html';
 import cx from 'classnames';
+import disableScroll from 'disable-scroll';
 
 import PageTitle from 'components/PageTitle';
 import Loader from 'components/Loader';
@@ -29,21 +30,17 @@ class Portfolio extends PureComponent {
   };
 
   showDetails = id => {
+    disableScroll.on();
     this.props.getProjectDetails(id);
-    document.body.style.top = `${-document.documentElement.scrollTop}px`;
-    document.body.style.overflowY = 'scroll';
-    document.body.style.position = 'fixed';
     this.setState({ showDetails: true, hideDetails: false });
   };
 
   hideDetails = () => {
-    document.body.style.position = 'static';
-    document.body.style.overflowY = 'auto';
-    document.body.style.top = '0';
     this.setState({ showDetails: false });
     setTimeout(() => {
       this.setState({ hideDetails: true });
     }, 500);
+    disableScroll.off();
   };
 
   render() {

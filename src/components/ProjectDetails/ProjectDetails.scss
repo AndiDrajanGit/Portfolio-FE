@@ -43,6 +43,7 @@
     position: absolute;
     bottom: 5px;
     right: 5px;
+    z-index: 1001;
     transition: all .2s;
     &:hover {
       opacity: 1;

@@ -121,4 +121,24 @@
       height: 0;
     }
   }
+
+  @media #{$media-tablet} {
+    &__project {
+      width: 50%;
+      height: 55vw;
+      &__hover {
+        height: 45vw;
+      }
+    }
+  }
+
+  @media #{$media-mobile} {
+    &__project {
+      width: 100%;
+      height: 110vw;
+      &__hover {
+        height: 90vw;
+      }
+    }
+  }
 }
