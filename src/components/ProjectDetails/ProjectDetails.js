@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import enhanceWithClickOutside from 'react-click-outside';
 import Carousel from 'nuka-carousel';
 
@@ -38,14 +39,20 @@ class ProjectDetails extends PureComponent {
                 <div key={index} className="project-details__carousel__item">
                   {image.desktop && (
                     <img
-                      className="project-details__carousel__item__desktop"
+                      className={cx(
+                        'project-details__carousel__item__image',
+                        'project-details__carousel__item__image--desktop'
+                      )}
                       src={image.desktop.url}
                       alt={`${details.title} - ${index} - Desktop`}
                     />
                   )}
                   {image.mobile && (
                     <img
-                      className="project-details__carousel__item__mobile"
+                      className={cx(
+                        'project-details__carousel__item__image',
+                        'project-details__carousel__item__image--mobile'
+                      )}
                       src={image.mobile.url}
                       alt={`${details.title} - ${index} - Mobile`}
                     />
