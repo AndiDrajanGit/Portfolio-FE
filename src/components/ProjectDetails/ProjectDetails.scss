@@ -16,6 +16,8 @@
     @include animation(fadein 2s);
   }
   &__carousel {
+    background-size: cover;
+    background-position: top center;
     width: 100%;
     position: relative;
     &:before {
