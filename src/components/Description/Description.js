@@ -37,9 +37,7 @@ class Description extends PureComponent {
             </div>
           </div>
         </div>
-        <div className="description__text">
-          {renderHtml(description)}
-        </div>
+        <div className="description__text">{renderHtml(description)}</div>
       </div>
     );
   }
