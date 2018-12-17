@@ -51,6 +51,26 @@
     .slider-control-bottomcenter {
       display: none;
     }
+    .slider-control-centerleft, .slider-control-centerright {
+      display: none;
+    }
+    .slider-control-bottomleft, .slider-control-bottomright {
+      button {
+        cursor: pointer;
+        background-color: rgba($color-black, 0.5);
+        border: none;
+        color: $color-white;
+        font-size: 25px;
+        outline: none;
+        padding: 0;
+        width: 50px;
+        height: 50px;
+        transition: all .2s;
+        &:hover {
+          background-color: rgba($color-black, 1);
+        }
+      }
+    }
   }
   &__close {
     cursor: pointer;

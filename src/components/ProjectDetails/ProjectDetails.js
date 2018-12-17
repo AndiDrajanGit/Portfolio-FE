@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-
-import Loader from 'components/Loader';
 import enhanceWithClickOutside from 'react-click-outside';
 import Carousel from 'nuka-carousel';
+
+import Loader from 'components/Loader';
 
 import './ProjectDetails.scss';
 
@@ -15,6 +15,7 @@ class ProjectDetails extends PureComponent {
   render() {
     const { isLoaded, details, hideDetails } = this.props;
     console.log('DDDDDDD', isLoaded, details);
+
     return (
       <div className="project-details">
         <Loader isVisible={!isLoaded} />
@@ -23,6 +24,12 @@ class ProjectDetails extends PureComponent {
             <Carousel
               className="project-details__carousel"
               style={{ backgroundImage: `url(${details.cover_image})` }}
+              renderBottomLeftControls={({ previousSlide }) => (
+                <button className="icon-angle-left" onClick={previousSlide} />
+              )}
+              renderBottomRightControls={({ nextSlide }) => (
+                <button className="icon-angle-right" onClick={nextSlide} />
+              )}
               wrapAround
               speed={750}
               easing="easeCubicInOut"
