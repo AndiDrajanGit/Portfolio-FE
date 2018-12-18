@@ -19,6 +19,7 @@
     background-size: cover;
     background-position: top center;
     width: 100%;
+    height: 50vh;
     position: relative;
     &:before {
       content: '';
@@ -75,6 +76,72 @@
       }
     }
   }
+  &__info {
+    float: left;
+    padding: 20px;
+    padding-bottom: 15px;
+    width: 100%;
+    position: relative;
+    &__title {
+      float: left;
+      border-bottom: 1px solid rgba($color-grey, 0.25);
+      width: 100%;
+      h2 {
+        color: $color-grey;
+        font-size: 30px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      h3 {
+        color: rgba($color-grey, 0.5);
+        font-size: 20px;
+        text-transform: lowercase;
+        margin-bottom: 15px;
+      }
+    }
+    &__description {
+      display: flex;
+      float: left;
+      color: $color-grey;
+      font-size: 18px;
+      line-height: 27px;
+      margin-top: 20px;
+      width: 100%;
+      p {
+        max-width: 50%;
+        &:not(:last-child) {
+          padding-right: 100px;
+        }
+        &:last-child {
+          padding-right: 40px;
+        }
+        &:not(:first-child) {
+          border-left: 1px solid rgba($color-grey, 0.25);
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+  &__site {
+    background-color: $color-green-light;
+    border: 2px solid $color-green-light;
+    color: $color-white;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+    transition: all .2s;
+    &:hover {
+      background-color: $color-white;
+      color: $color-green-light;
+    }
+  }
   &__close {
     cursor: pointer;
     background-color: transparent;
@@ -110,6 +177,64 @@
           }
         }
       }
+    }
+    &__info {
+      &__title {
+        h2 {
+          font-size: 25px;
+        }
+        h3 {
+          font-size: 18px;
+        }
+      }
+      &__description {
+        font-size: 14px;
+        p {
+          &:not(:last-child) {
+            padding-right: 40px;
+          }
+          &:last-child {
+            padding-right: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$media-mobile} {
+    &__info {
+      padding: 10px;
+      &__title {
+        h2 {
+          font-size: 20px;
+        }
+        h3 {
+          font-size: 16px;
+        }
+      }
+      &__description {
+        display: block;
+        font-size: 12px;
+        margin-top: 0;
+        p {
+          float: left;
+          padding: 10px 5px !important;
+          width: 100%;
+          max-width: 100%;
+          &:not(:first-child) {
+            border-left: none;
+            border-top: 1px solid rgba($color-grey, 0.25);
+          }
+        }
+      }
+    }
+    &__site {
+      font-size: 15px;
+      line-height: 35px;
+      width: 120px;
+      height: 35px;
+      left: 10px;
+      bottom: 10px;
     }
   }
 

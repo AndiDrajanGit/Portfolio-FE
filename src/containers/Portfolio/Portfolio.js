@@ -20,14 +20,14 @@ class Portfolio extends PureComponent {
   }
 
   // REMOVE WHEN DONE
-  componentWillMount = () => {
-    setTimeout(() => {
-      this.setState({ showDetails: true, hideDetails: false });
-    }, 1000);
-    setTimeout(() => {
-      this.props.getProjectDetails(79);
-    }, 2000);
-  };
+  // componentWillMount = () => {
+  //   setTimeout(() => {
+  //     this.setState({ showDetails: true, hideDetails: false });
+  //   }, 1000);
+  //   setTimeout(() => {
+  //     this.props.getProjectDetails(79);
+  //   }, 2000);
+  // };
 
   showDetails = id => {
     disableScroll.on();

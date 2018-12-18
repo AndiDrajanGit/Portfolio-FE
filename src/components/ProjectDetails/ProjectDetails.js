@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import enhanceWithClickOutside from 'react-click-outside';
+import renderHtml from 'react-render-html';
 import Carousel from 'nuka-carousel';
 
 import Loader from 'components/Loader';
@@ -60,6 +61,22 @@ class ProjectDetails extends PureComponent {
                 </div>
               ))}
             </Carousel>
+            <div className="project-details__info">
+              <div className="project-details__info__title">
+                <h2 className="font-bold">{details.title}</h2>
+                <h3 className="font-medium">{details.subtitle}</h3>
+              </div>
+              <div className="project-details__info__description">
+                {details.description.map((description, index) => (
+                  <p key={index}>{renderHtml(description.text)}</p>
+                ))}
+              </div>
+            </div>
+            {details.website && (
+              <a className="project-details__site font-bold" href={details.website} target="_blank">
+                View Site
+              </a>
+            )}
           </div>
         )}
         <button onClick={hideDetails} className="font-bold project-details__close">
