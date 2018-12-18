@@ -1,0 +1,66 @@
+@import '~styles/resources';
+
+.contact-item {
+  $item: &;
+  line-height: 80px;
+  text-decoration: none;
+  margin: 10px 0;
+  &--position {
+    &-left {
+      float: left;
+      clear: left;
+    }
+    &-right {
+      float: right;
+      clear: right;
+    }
+  }
+  &__hex {
+    float: left;
+    color: $color-white;
+    font-size: 40px;
+    text-align: center;
+    width: 100px;
+    height: 80px;
+  }
+  &__info {
+    float: left;
+    color: $color-white;
+    font-size: 25px;
+    margin-left: 15px;
+    transition: all .2s;
+  }
+  &:hover {
+    #{$item} {
+      &__hex {
+        color: $color-green-light;
+        .hexagon__inner__content {
+          background-color: $color-white;
+        }
+      }
+      &__info {
+        color: $color-green-light;
+      }
+    }
+  }
+
+  @media #{$media-mobile} {
+    line-height: 60px;
+    &--position {
+      &-left {
+        float: none;
+      }
+      &-right {
+        float: none;
+      }
+    }
+    &__hex {
+      font-size: 30px;
+      width: 70px;
+      height: 60px;
+    }
+    &__info {
+      font-size: 20px;
+    }
+  }
+}

@@ -19,6 +19,7 @@
       height: 100%;
       visibility: visible;
       @include transform(rotate(-60deg));
+      transition: all .2s;
     }
   }
 }

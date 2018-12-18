@@ -27,5 +27,11 @@
         border-color: $color-grey;
       }
     }
+    &-green {
+      span {
+        color: $color-green-light;
+        border-color: $color-green-light;
+      }
+    }
   }
 }

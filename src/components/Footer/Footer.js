@@ -6,7 +6,7 @@ class Footer extends React.Component {
   static propTypes = {};
 
   render() {
-    return <div className="footer">footer</div>;
+    return <div className="footer">&copy; {new Date().getFullYear()} Andi Drajan</div>;
   }
 }
 

@@ -1,5 +1,46 @@
 @import '~styles/resources';
 
 .contact-page {
-  background-color: $color-white;
+  &__content-wrapper {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - #{$height-header} - #{$height-title} - #{$height-footer});
+    @include animation(fadein 2s);
+  }
+  &__content {
+    margin-bottom: 130px;
+    width: 700px;
+  }
+  &__col {
+    &--pos {
+      &-left {
+        float: left;
+      }
+      &-right {
+        float: right;
+      }
+    }
+  }
+
+  @media #{$media-tablet} {
+    &__content {
+      width: 600px;
+    }
+  }
+
+  @media #{$media-mobile} {
+    &__content {
+      padding: 0 10px;
+      width: 100%;
+    }
+    &__col {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+  }
 }

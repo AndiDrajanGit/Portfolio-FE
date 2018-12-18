@@ -7,6 +7,7 @@ import { getDescription } from 'actions/description';
 import { getSkills } from 'actions/skills';
 import { getJobs } from 'actions/jobs';
 import { getProjects, getProjectDetails } from 'actions/projects';
+import { getContact } from 'actions/contact';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -23,6 +24,7 @@ class Layout extends React.Component {
     this.props.getSkills();
     this.props.getJobs();
     this.props.getProjects();
+    this.props.getContact();
   };
 
   componentDidMount = () => {
@@ -30,7 +32,7 @@ class Layout extends React.Component {
   };
 
   render() {
-    const { description, skills, jobs, projects } = this.props;
+    const { description, skills, jobs, projects, contact } = this.props;
 
     return (
       <div id="layout" className="layout">
@@ -44,7 +46,7 @@ class Layout extends React.Component {
             <Portfolio projects={projects} getProjectDetails={this.props.getProjectDetails} />
           </ScrollableAnchor>
           <ScrollableAnchor id="contact">
-            <Contact />
+            <Contact contact={contact} />
           </ScrollableAnchor>
         </div>
         <Footer />
@@ -57,7 +59,8 @@ const mapStateToProps = state => ({
   description: state.description,
   skills: state.skills,
   jobs: state.jobs,
-  projects: state.projects
+  projects: state.projects,
+  contact: state.contact
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -65,7 +68,8 @@ const mapDispatchToProps = dispatch => ({
   getSkills: () => dispatch(getSkills()),
   getJobs: () => dispatch(getJobs()),
   getProjects: () => dispatch(getProjects()),
-  getProjectDetails: id => dispatch(getProjectDetails(id))
+  getProjectDetails: id => dispatch(getProjectDetails(id)),
+  getContact: () => dispatch(getContact())
 });
 
 Layout.propTypes = {
@@ -74,10 +78,12 @@ Layout.propTypes = {
   getSkills: PropTypes.func.isRequired,
   getProjects: PropTypes.func.isRequired,
   getProjectDetails: PropTypes.func.isRequired,
+  getContact: PropTypes.func.isRequired,
   skills: PropTypes.object.isRequired,
   getJobs: PropTypes.func.isRequired,
   jobs: PropTypes.object.isRequired,
-  projects: PropTypes.object.isRequired
+  projects: PropTypes.object.isRequired,
+  contact: PropTypes.object.isRequired
 };
 
 export default connect(
