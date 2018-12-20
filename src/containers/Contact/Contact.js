@@ -15,7 +15,6 @@ class Contact extends PureComponent {
     const { contact } = this.props;
     const { isLoaded } = contact;
     const { phone, email, facebook, linkedin } = contact.data;
-    console.log('CCCCCCCC', contact);
 
     return (
       <div className="page page-last contact-page">
@@ -32,24 +31,17 @@ class Contact extends PureComponent {
                   text={phone}
                   url={`tel:${phone.replace(/\s/g, '')}`}
                 />
-                <ContactItem
-                  position="left"
-                  icon="envelope"
-                  text={email}
-                  url={`mailto:${email}`}
-                />
+                <ContactItem position="left" icon="envelope" text={email} url={`mailto:${email}`} />
               </div>
               <div className="contact-page__col contact-page__col--pos-right">
-                <ContactItem
-                  position="right"
-                  icon="facebook"
-                  url={facebook}
-                />
-                <ContactItem
-                  position="right"
-                  icon="linkedin"
-                  url={linkedin}
-                />
+                <ContactItem position="right" icon="facebook" url={facebook} />
+                <ContactItem position="right" icon="linkedin" url={linkedin} />
+              </div>
+              <div className="contact-page__resume">
+                <a href={contact.data.resume.url} target="_blank">
+                  <span className="icon-file" />
+                  Download Resume
+                </a>
               </div>
             </div>
           </div>

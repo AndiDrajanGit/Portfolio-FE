@@ -1,10 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
 
-import { NAV } from 'constants/AppConsts';
 import { scrollToTop } from 'utils/site';
 
 import logo from 'images/logo.png';
+
+import HeaderMenu from 'components/HeaderMenu';
+import HeaderNav from 'components/HeaderNav';
+
 import './Header.scss';
 
 let winHeight = window.innerHeight;
@@ -45,27 +48,21 @@ class Header extends React.Component {
   };
 
   render() {
+    const { activeNavItem } = this.state;
     return (
       <div className={cx('header', this.state.visible ? 'header--visible' : '')}>
         <div className="header__content">
-          <a href="#home" className="header__logo">
+          <a href="#home" onClick={e => this.handleClick(e, '')} className="header__logo">
             <img src={logo} alt="logo" />
           </a>
-          <div className="header__nav">
-            {NAV.map((item, key) => (
-              <a
-                key={key}
-                href={item.link}
-                onClick={e => this.handleClick(e, item.link)}
-                className={cx(
-                  'header__nav__item',
-                  this.state.activeNavItem === item.title ? 'header__nav__item--active' : ''
-                )}
-              >
-                {item.title}
-              </a>
-            ))}
+          <div className="header__nav mobile-hide">
+            <HeaderNav
+              classname="header__nav"
+              activeNavItem={activeNavItem}
+              handleNavClick={this.handleClick}
+            />
           </div>
+          <HeaderMenu handleNavClick={this.handleClick} activeNavItem={activeNavItem} />
         </div>
       </div>
     );

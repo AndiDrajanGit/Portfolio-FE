@@ -50,4 +50,10 @@
       }
     }
   }
+
+  @media #{$media-mobile} {
+    &__content {
+      width: calc(100% - 20px);
+    }
+  }
 }
